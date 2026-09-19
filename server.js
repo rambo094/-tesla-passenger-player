@@ -33,7 +33,9 @@ function resolveMedia(url) {
       "--no-playlist",
       "--js-runtimes", "node",
       "--extractor-args", "youtube:player_client=web",
-      "-f", "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best",
+      // Do not require MP4/M4A. YouTube does not expose those containers
+      // for every video. yt-dlp recommends bv*+ba/b as the general fallback.
+      "-f", "bv*+ba/b",
       "-g",
       url
     ];

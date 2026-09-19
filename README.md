@@ -16,3 +16,9 @@ Railway IP, a different permitted video source or authenticated approach may be 
 This is a proof of concept. Tesla firmware/browser behavior may still restrict fullscreen
 or playback while the vehicle is moving. Use video only for passengers and keep the
 driver's attention on the road.
+
+## Format selection
+
+The resolver uses `bv*+ba/b` rather than requiring MP4/M4A. This allows yt-dlp to
+choose the best available video/audio streams for videos whose available containers
+do not include a pre-merged MP4.
