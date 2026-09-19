@@ -1,11 +1,18 @@
 # Tesla Passenger Player
 
-Passenger-only proof of concept using Canvas/WebGL (JSMpeg) instead of an HTML5 video element.
+Canvas/WebSocket passenger video player proof of concept for Tesla's browser.
 
-## Deploy
-Designed for a Docker-capable host such as Railway. Requires Node.js, FFmpeg and yt-dlp.
-Set no secrets. After deployment, open the HTTPS URL and paste a public YouTube URL.
+## YouTube extraction
+
+The container installs current `yt-dlp[default]`, which includes `yt-dlp-ejs`, and Node 22.
+The server enables the Node JavaScript runtime for yt-dlp's YouTube extraction.
 
 ## Important
-This is experimental. Tesla browser behavior can change between firmware versions.
-Use only as a passenger and obey local laws and Tesla's terms.
+
+YouTube may still reject requests from cloud-provider IPs with HTTP 429/bot checks.
+This project does not bypass authentication or access controls. If YouTube blocks the
+Railway IP, a different permitted video source or authenticated approach may be needed.
+
+This is a proof of concept. Tesla firmware/browser behavior may still restrict fullscreen
+or playback while the vehicle is moving. Use video only for passengers and keep the
+driver's attention on the road.
