@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Tesla Passenger Player</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main id="app">
+  <section id="setup">
+    <h1>Tesla Passenger Player</h1>
+    <p>YouTube → Canvas/WebGL.</p>
+    <input id="url" placeholder="https://www.youtube.com/watch?v=..." autocomplete="off">
+    <select id="quality">
+      <option value="480">480p</option>
+      <option value="720" selected>720p</option>
+      <option value="1080">1080p</option>
+    </select>
+    <button id="start">AVVIA</button>
+    <p class="hint">Pensato esclusivamente per il passeggero. Il conducente deve tenere gli occhi sulla strada.</p>
+  </section>
+  <section id="player" hidden>
+    <canvas id="videoCanvas"></canvas>
+    <audio id="audio" controls></audio>
+    <div id="controls">
+      <button id="fs">⛶</button><button id="stop">■</button>
+    </div>
+    <div id="status">Connessione…</div>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/jsmpeg@0.2.1/jsmpeg.min.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

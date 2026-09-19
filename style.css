@@ -1,0 +1,14 @@
+html,body,#app{margin:0;width:100%;height:100%;background:#000;color:#fff;font-family:system-ui,sans-serif}
+body{overflow:hidden}
+#setup{box-sizing:border-box;max-width:700px;margin:auto;padding:8vh 6vw}
+h1{font-size:32px}
+input,select,button{font-size:20px;border-radius:12px;border:0;padding:14px;margin:6px 0;box-sizing:border-box}
+input{width:100%}
+button{cursor:pointer}
+#start{width:100%;font-weight:700}
+.hint{opacity:.65;font-size:14px}
+#player{position:fixed;inset:0;background:#000}
+#videoCanvas{width:100%;height:100%;display:block;object-fit:contain}
+#controls{position:absolute;right:18px;bottom:18px;display:flex;gap:8px}
+#controls button{background:rgba(0,0,0,.65);color:#fff}
+#status{position:absolute;left:16px;bottom:16px;background:rgba(0,0,0,.55);padding:7px 10px;border-radius:8px;font-size:13px}
