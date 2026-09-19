@@ -149,7 +149,8 @@ wss.on("connection", (ws, req) => {
       "-c:v", "mpeg1video",
       "-b:v", bitrate,
       "-r", "30",
-      "-f", "mpeg1video",
+      "-f", "mpegts",
+      "-codec:v", "mpeg1video",
       "pipe:1"
     ]);
 

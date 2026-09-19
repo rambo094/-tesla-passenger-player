@@ -1,24 +1,11 @@
-# Tesla Passenger Player
+# Tesla Passenger Player — video patch
 
-Canvas/WebSocket passenger video player proof of concept for Tesla's browser.
+This patch fixes two video-side issues:
 
-## YouTube extraction
+1. JSMpeg is loaded from cdnjs instead of the previous jsDelivr URL.
+2. The WebSocket video stream is sent as MPEG-TS + MPEG1 video, which is the
+   stream format expected by current JSMpeg.
 
-The container installs current `yt-dlp[default]`, which includes `yt-dlp-ejs`, and Node 22.
-The server enables the Node JavaScript runtime for yt-dlp's YouTube extraction.
-
-## Important
-
-YouTube may still reject requests from cloud-provider IPs with HTTP 429/bot checks.
-This project does not bypass authentication or access controls. If YouTube blocks the
-Railway IP, a different permitted video source or authenticated approach may be needed.
-
-This is a proof of concept. Tesla firmware/browser behavior may still restrict fullscreen
-or playback while the vehicle is moving. Use video only for passengers and keep the
-driver's attention on the road.
-
-## Format selection
-
-The resolver uses `bv*+ba/b` rather than requiring MP4/M4A. This allows yt-dlp to
-choose the best available video/audio streams for videos whose available containers
-do not include a pre-merged MP4.
+The fact that audio was playing proves the Railway server and YouTube audio
+resolution were already working; the visible error `Can't find variable: JSMpeg`
+was a browser-side player loading problem.
